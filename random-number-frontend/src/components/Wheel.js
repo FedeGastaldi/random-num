@@ -103,17 +103,21 @@ const Wheel = ({ onFetchNumber }) => {
   };
 
   return (
-    <div className="roulette">
-      <div className="spinner" ref={spinnerRef}></div>
-      <div className="shadow"></div>
-      <div className="markers">
-        <div className="triangle"></div>
-      </div>
-      <div className="button" onClick={spin}>
-        <span>{result === null ? 'Girar' : result}</span>
-      </div>
+  <div className="roulette">
+    <div className="spinner" ref={spinnerRef}></div>
+    <div className="shadow"></div>
+    <div className="markers">
+      <div className="triangle"></div>
     </div>
-  );
+    <div
+      className="button"
+      onClick={spin}
+      onMouseEnter={() => setResult(null)} // Restablece el texto al pasar el mouse
+    >
+      <span>{result === null ? 'Girar' : result}</span>
+    </div>
+  </div>
+);
 };
 
 export default Wheel;
